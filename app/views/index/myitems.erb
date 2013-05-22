@@ -1,33 +1,25 @@
-
-<div class="row">
-  <div class="span12">
-    <h3>My  Items</h3>
-  </div>
+<h4>My  Items</h4>
 
   <ul class="thumbnails">
 
-    <% @items.each do |item| %>
+   <% @items.each do |item| %>
 
-        <li class="span3">
-          <div class="thumbnail">
-            <img data-src="holder.js/160x120" alt="" src="<%= image_path "noimage.jpg" %>">
-            <div class="caption">
+      <li class="span3">
+        <div class="thumbnail">
+          <img data-src="holder.js/160x120" alt="" src="<%= image_path "noimage.jpg" %>">
+          <div class="caption">
 
-              <a  href="<%= item.url %>" title="<%= item.title %>">
-                <h3><%= item.title %></h3>
-              </a>
-              <p> Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+            <a  href="<%= item.url %>" title="<%= item.title %>">
+              <span class="title"><%= item.title %></span>
+            </a>
 
-              </p>
-
-
-            </div>
-
+            <p>
+              Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+              Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+            </p>
           </div>
-        </li>
-    <% end %>
+        </div>
+      </li>
 
-  </ul>
-
-
-
+  <% end %>
+</ul>

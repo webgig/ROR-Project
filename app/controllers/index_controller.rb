@@ -8,7 +8,8 @@ class IndexController < ApplicationController
 
 
   def myitems
-    @items = Item.all
+    @items = Item.where({:user_id => session[:current_user].id})
+    @item  = Item.new
 
   end
 

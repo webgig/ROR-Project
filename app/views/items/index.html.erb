@@ -1,35 +1,33 @@
-<h1>Listing items</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Title</th>
-      <th>Url</th>
-      <th>Price</th>
-      <th>Cat</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div class="row">
+  <div class="span12">
+    <h3>Items</h3>
+  </div>
 
-  <tbody>
+  <ul class="thumbnails">
+
     <% @items.each do |item| %>
-      <tr>
-        <td><%= item.user_id %></td>
-        <td><%= item.title %></td>
-        <td><%= item.url %></td>
-        <td><%= item.price %></td>
-        <td><%= item.cat_id %></td>
-        <td><%= link_to 'Show', item %></td>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+
+        <li class="span3">
+          <div class="thumbnail">
+            <img data-src="holder.js/160x120" alt="" src="<%= image_path "noimage.jpg" %>">
+            <div class="caption">
+
+              <a  href="<%= item.url %>" title="<%= item.title %>">
+                <h3><%= item.title %></h3>
+              </a>
+              <p> Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+
+              </p>
+
+
+            </div>
+
+          </div>
+        </li>
     <% end %>
-  </tbody>
-</table>
 
-<br>
+  </ul>
 
-<%= link_to 'New Item', new_item_path %>
+
+

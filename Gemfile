@@ -8,6 +8,7 @@ gem 'rails', '4.0.0.rc1'
 
 group :development do
   gem 'sqlite3'
+  gem 'rspec-rails','2.9.0'
 end
 
 group :assets do
@@ -18,9 +19,8 @@ end
 
 gem 'jquery-rails'
 
-group :production do
- gem 'pg','0.12.2'
-end       
+gem 'bootstrap-sass', '~> 2.3.1.0'
+gem 'font-awesome-sass-rails'
 
 # Use SCSS for stylesheets
 #gem 'sass-rails', '~> 4.0.0.rc1'

@@ -1,0 +1,41 @@
+<div class="modal fade" id="login_modal">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">&times;</a>
+    <h3>Login</h3>
+  </div>
+  <div class="modal-body">
+
+    <%= form_tag :action => :authenticate do %>
+
+        <fieldset>
+
+          <div class="control-group">
+            <!-- Username -->
+            <%= label_tag :user, 'Username:' %>
+            <div class="controls">
+              <%= text_field_tag :user %>
+
+            </div>
+          </div>
+
+          <div class="control-group">
+            <!-- Password-->
+            <%= label_tag :password, 'Password:' %>
+            <div class="controls">
+              <%= password_field_tag :password %>
+            </div>
+          </div>
+
+
+          <div class="control-group">
+            <!-- Button -->
+            <div class="controls">
+              <%= submit_tag 'Login' %>
+            </div>
+          </div>
+        </fieldset>
+    <% end %>
+  </div>
+  <div class="modal-footer">
+   </div>
+</div>

@@ -3,6 +3,7 @@ class IndexController < ApplicationController
   def index
     @items = Item.all
     @item  = Item.new
+    @user  = User.new
   end
 
 
@@ -25,13 +26,13 @@ class IndexController < ApplicationController
       flash[:error] = "Invalid Username"
     end
 
-    redirect_to index
+    redirect_to root_path
 
   end
 
   def logout
     reset_session
-    redirect_to index
+    redirect_to root_path
 
   end
 end

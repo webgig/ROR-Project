@@ -1,3 +1,4 @@
+<h5>Have an Item to Submit?</h5>
 <%= form_for(@item) do |f| %>
   <% if @item.errors.any? %>
     <div id="error_explanation">
@@ -10,28 +11,29 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+<fieldset>
+    <%= f.hidden_field :user_id ,{value:session[:current_user].id}%>
+  <div class="control-group">
+    <%= f.label 'Item Name'%>
+    <div class='controls'>
+      <%= f.text_field :title %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+  <div class="control-group">
+    <%= f.label 'Item Url'%>
+    <div class='controls'>
+      <%= f.text_field :url %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :url %><br>
-    <%= f.text_field :url %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
-  </div>
-  <div class="field">
-    <%= f.label :cat_id %><br>
-    <%= f.number_field :cat_id %>
-  </div>
+  <div class="control-group">
+    <%= f.label 'Item Price' %>
+    <div class="controls">
+      <%= f.text_field :price %>
+    </div>
+</div>
+  <%= f.hidden_field :user_id ,{value:1}%>
   <div class="actions">
-    <%= f.submit %>
+    <%= submit_tag 'Submit Item' %>
   </div>
+  </fieldset>
 <% end %>
